@@ -17,4 +17,16 @@ int main()
     return 0;
 }
 
-//Write definition of stat() here 
+void stat(const double A[],int N,double B[]){
+    double sum=0,sum2,max=A[0],min=A[0];
+    for(int i=0;i<N;i++){
+        sum+=A[i];
+        sum2+=A[i]*A[i];
+        if(max<A[i])max=A[i];
+        if(min>A[i])min=A[i];
+    }
+    B[0]=sum/N;
+    B[1]=sqrt((sum2/N)-(B[0]*B[0]));
+    B[2]=max;
+    B[3]=min;
+}
